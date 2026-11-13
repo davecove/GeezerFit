@@ -18,12 +18,12 @@ val keystoreProps = Properties().apply {
 
 android {
     namespace = "com.softoolsmith.geezerfit"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.softoolsmith.geezerfit"
         minSdk = 29
-        targetSdk = 35 // Play requires a recent target; bump when Play requires it
+        targetSdk = 36
         versionCode = 1
         versionName = "0.1.0"
     }
