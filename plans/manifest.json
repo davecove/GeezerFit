@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "updated": "2026-11-12",
+  "base_url": "https://raw.githubusercontent.com/davecove/GeezerFit/main/plans/",
+  "plans": [
+    {
+      "file": "dave_2026_11.json",
+      "version": "1.1",
+      "user": "dave",
+      "month_key": "2026-11",
+      "month_label": "November 2026",
+      "phase_label": "Foundation Phase"
+    },
+    {
+      "file": "dave_2026_12.json",
+      "version": "1.1",
+      "user": "dave",
+      "month_key": "2026-12",
+      "month_label": "December 2026",
+      "phase_label": "Load Phase"
+    },
+    {
+      "file": "lesa_2026_11.json",
+      "version": "1.1",
+      "user": "lesa",
+      "month_key": "2026-11",
+      "month_label": "November 2026",
+      "phase_label": "Foundation Phase"
+    },
+    {
+      "file": "lesa_2026_12.json",
+      "version": "1.1",
+      "user": "lesa",
+      "month_key": "2026-12",
+      "month_label": "December 2026",
+      "phase_label": "Progressive Load Phase"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "user": "lesa",
+  "month_label": "November 2026",
+  "month_key": "2026-11",
+  "phase_label": "Foundation Phase",
+  "phase_note": "November is about learning the exercises, building the habit, and establishing safe form. This month is not about pushing limits.",
+  "workouts": [
+    {
+      "id": "A",
+      "warmup": [
+        {
+          "name": "Treadmill walk",
+          "instruction": "5 min, brisk pace"
+        },
+        {
+          "name": "Cat-cow stretch",
+          "instruction": "10 reps"
+        },
+        {
+          "name": "Hip circles",
+          "instruction": "10 each direction"
+        },
+        {
+          "name": "Wall calf raises",
+          "instruction": "15 reps, hold at top"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "leg_press",
+          "name": "Leg Press",
+          "sets": 3,
+          "reps": "15",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Machine leg press. Feet shoulder-width, toes slightly out, about mid-platform. Push through heels. Don't lock knees at the top. Lower slowly. Start at a comfortable weight -- form first."
+        },
+        {
+          "id": "seated_row_machine",
+          "name": "Seated Row Machine",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Machine seated row (not cable). Chest pad for support. Pull handles to lower chest, squeeze shoulder blades. Keep spine tall. Builds posture muscles and upper back strength."
+        },
+        {
+          "id": "chest_press_machine",
+          "name": "Chest Press Machine",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Machine chest press. Adjust seat so handles are at chest level. Press straight out, don't lock elbows at the end. Control the return."
+        },
+        {
+          "id": "dumbbell_bicep_curl",
+          "name": "Dumbbell Bicep Curl",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Stand or sit, curl both dumbbells simultaneously (or alternate). Keep elbows pinned at sides -- don't swing. Squeeze at top. Lower slowly. Practical arm strength for carrying."
+        },
+        {
+          "id": "calf_raises",
+          "name": "Calf Raises",
+          "sets": 3,
+          "reps": "15",
+          "rest_sec": 60,
+          "weight_entry": false,
+          "notes": "Stand on a step or flat ground, rise up on toes, hold 1 second, lower slowly. Use a machine if available. Full range of motion."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Treadmill Walk",
+        "duration_min": 20,
+        "instruction": "Brisk pace, 2-3% incline. RPE 5-6."
+      },
+      "day": "Tuesday"
+    },
+    {
+      "id": "B",
+      "warmup": [
+        {
+          "name": "Treadmill walk",
+          "instruction": "5 min, brisk pace"
+        },
+        {
+          "name": "Glute bridges",
+          "instruction": "12 reps, hold 1 sec at top"
+        },
+        {
+          "name": "Side-lying clamshells",
+          "instruction": "12 each side"
+        },
+        {
+          "name": "Ankle circles",
+          "instruction": "10 each direction, each ankle"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "goblet_squat",
+          "name": "Goblet Squat",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Hold dumbbell at chest. Feet shoulder-width, toes slightly out. Sit back and down, chest tall. Keep knees tracking over toes. Aim to get thighs parallel to floor."
+        },
+        {
+          "id": "lat_pulldown",
+          "name": "Lat Pulldown",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Wide grip, lean back slightly. Pull bar to upper chest, driving elbows down. Control the return. Builds lats and upper back -- important for posture and preventing forward-rounding."
+        },
+        {
+          "id": "dumbbell_shoulder_press_seated",
+          "name": "Dumbbell Shoulder Press (Seated)",
+          "sets": 3,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Seated with back support. Dumbbells at shoulder level, press up. Don't lock out at top. Lower slowly. Overhead strength for practical tasks and overall upper body muscle mass."
+        },
+        {
+          "id": "hip_abduction_machine",
+          "name": "Hip Abduction Machine",
+          "sets": 3,
+          "reps": "15",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Seated hip abduction machine -- push knees outward against resistance. Keep movement controlled. Squeeze at end of range."
+        },
+        {
+          "id": "plank",
+          "name": "Plank",
+          "sets": 3,
+          "reps": "20-30 sec",
+          "rest_sec": 60,
+          "weight_entry": false,
+          "notes": "Forearm plank or straight-arm plank. Body in straight line from head to heels -- don't let hips sag or pike up. Breathe normally. Build toward 30 seconds this month. Stop if lower back hurts -- reduce to knee plank first."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Treadmill Walk",
+        "duration_min": 20,
+        "instruction": "Brisk pace, 2-3% incline. RPE 5-6."
+      },
+      "day": "Thursday"
+    }
+  ]
+}

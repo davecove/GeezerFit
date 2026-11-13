@@ -1,0 +1,157 @@
+{
+  "user": "dave",
+  "month_label": "December 2026",
+  "month_key": "2026-12",
+  "phase_label": "Load Phase",
+  "phase_note": "November built the foundation. December adds load and volume. Increase weight when you can complete all sets and reps with good form. Push harder on the carries -- farmer's carries and suitcase carries are your most important exercises.",
+  "workouts": [
+    {
+      "id": "A",
+      "warmup": [
+        {
+          "name": "Treadmill or bike",
+          "instruction": "5 min at easy pace"
+        },
+        {
+          "name": "Cat-cow stretch",
+          "instruction": "10 reps"
+        },
+        {
+          "name": "Hip circles",
+          "instruction": "10 each direction"
+        },
+        {
+          "name": "Glute bridges",
+          "instruction": "15 reps"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "dumbbell_split_squat",
+          "name": "Dumbbell Split Squat",
+          "sets": 4,
+          "reps": "10 each leg",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Stand with one foot forward, one back (rear foot can be elevated for Bulgarian split squat). Lower rear knee toward floor, keeping front shin vertical. Dumbbells at sides. More demanding than goblet squat -- better for single-leg strength. Do all reps on one leg before switching."
+        },
+        {
+          "id": "seated_cable_row",
+          "name": "Seated Cable Row",
+          "sets": 4,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Adding a 4th set from November. Increase weight if 3-set version felt manageable. Neutral grip, pull to lower chest, squeeze shoulder blades. Control the return."
+        },
+        {
+          "id": "incline_dumbbell_press",
+          "name": "Incline Dumbbell Press",
+          "sets": 4,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Bench set to 30-45 degree incline. Targets upper chest and front deltoids. Elbows at 45 degrees, control the descent."
+        },
+        {
+          "id": "pallof_press",
+          "name": "Pallof Press",
+          "sets": 3,
+          "reps": "12 each side",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Increase resistance from November. Press out, hold 2 seconds, return. Keep hips and shoulders square."
+        },
+        {
+          "id": "single_leg_rdl",
+          "name": "Single-Leg RDL",
+          "sets": 3,
+          "reps": "8 each leg",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Hold one dumbbell in opposite hand from working leg. Hinge at hip, let non-working leg extend behind. Keep hips square -- resist the hip of the floating leg rising. Use a wall for balance assist if needed."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Interval Cardio",
+        "duration_min": 20,
+        "instruction": "2 min moderate / 1 min hard, repeat. Bike or elliptical."
+      },
+      "day": "Tuesday"
+    },
+    {
+      "id": "B",
+      "warmup": [
+        {
+          "name": "Treadmill or bike",
+          "instruction": "5 min at easy pace"
+        },
+        {
+          "name": "World's greatest stretch",
+          "instruction": "5 each side"
+        },
+        {
+          "name": "Leg swings",
+          "instruction": "10 each direction, each leg"
+        },
+        {
+          "name": "Band pull-aparts",
+          "instruction": "15 reps"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "romanian_deadlift_rdl",
+          "name": "Romanian Deadlift (RDL)",
+          "sets": 4,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Adding a 4th set from November. Increase weight if November's 3-set felt manageable. Keep hinging at the hip -- spine stays neutral."
+        },
+        {
+          "id": "lat_pulldown",
+          "name": "Lat Pulldown",
+          "sets": 4,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "4 sets at slightly heavier weight than November's 3. Drive elbows down and back. Full range of motion -- start with arms nearly straight, finish with bar at upper chest."
+        },
+        {
+          "id": "arnold_press",
+          "name": "Arnold Press",
+          "sets": 3,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Start with dumbbells at chest, palms facing you. As you press up, rotate so palms face forward at top. Reverse on the way down. Hits all three deltoid heads. Go slightly lighter than a standard press -- the rotation adds challenge."
+        },
+        {
+          "id": "farmers_carry",
+          "name": "Farmer's Carry",
+          "sets": 3,
+          "reps": "50 meters",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Heavier than November. Stand tall, shoulders back, brace core. Walk 25 meters and return. If 50m feels easy, go heavier next set."
+        },
+        {
+          "id": "suitcase_carry",
+          "name": "Suitcase Carry",
+          "sets": 3,
+          "reps": "30 meters each side",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Hold ONE heavy dumbbell at your side -- like a suitcase. Walk tall and resist leaning toward the weighted side. Switch sides each set. Directly replicates one-sided carrying (lumber, tools, bags). Start moderately heavy -- this is harder than it looks."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Interval Cardio",
+        "duration_min": 20,
+        "instruction": "2 min moderate / 1 min hard, repeat. Bike or elliptical."
+      },
+      "day": "Thursday"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "user": "lesa",
+  "month_label": "December 2026",
+  "month_key": "2026-12",
+  "phase_label": "Progressive Load Phase",
+  "phase_note": "November built the habit and form. December adds weight and intensity. The stair climber replaces treadmill walks for a greater cardiovascular challenge.",
+  "workouts": [
+    {
+      "id": "A",
+      "warmup": [
+        {
+          "name": "Treadmill walk",
+          "instruction": "5 min, brisk pace"
+        },
+        {
+          "name": "Glute bridges",
+          "instruction": "15 reps"
+        },
+        {
+          "name": "Wall calf raises",
+          "instruction": "15 reps"
+        },
+        {
+          "name": "Hip circles",
+          "instruction": "10 each direction"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "dumbbell_squat",
+          "name": "Dumbbell Squat",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Moving from machine leg press to free-weight squat. Hold dumbbells at sides or at shoulders. Feet shoulder-width, squat to parallel. Start lighter than you think you need."
+        },
+        {
+          "id": "seated_cable_row",
+          "name": "Seated Cable Row",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Moving from row machine to cable row for greater range of motion. Neutral grip, pull to lower chest. Heavier than November's machine rows. Keep spine tall, squeeze shoulder blades at end of each rep."
+        },
+        {
+          "id": "dumbbell_chest_press_on_bench",
+          "name": "Dumbbell Chest Press (on bench)",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Moving from machine to free weights on a flat bench. Heavier than November's machine press. Elbows at 45 degrees. Control the descent. Free weight bench press requires more stabilizer muscles than the machine version."
+        },
+        {
+          "id": "curl_and_press_combo",
+          "name": "Curl and Press Combo",
+          "sets": 3,
+          "reps": "10",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Bicep curl straight into shoulder press in one continuous movement. Curl dumbbells to shoulders, then press overhead. Lower back to shoulders, then lower to sides. Use a weight that works for the press (the weaker movement) -- not the curl."
+        },
+        {
+          "id": "calf_raises",
+          "name": "Calf Raises",
+          "sets": 4,
+          "reps": "15",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Adding a 4th set and increasing weight. Hold dumbbells or use calf raise machine. Full range of motion. Slow and controlled."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Stair Climber",
+        "duration_min": 25,
+        "instruction": "Steady pace. RPE 5-6. Handrails for balance only."
+      },
+      "day": "Tuesday"
+    },
+    {
+      "id": "B",
+      "warmup": [
+        {
+          "name": "Treadmill walk",
+          "instruction": "5 min, brisk pace"
+        },
+        {
+          "name": "Cat-cow stretch",
+          "instruction": "10 reps"
+        },
+        {
+          "name": "Side-lying clamshells",
+          "instruction": "12 each side"
+        },
+        {
+          "name": "Glute bridges",
+          "instruction": "12 reps"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "romanian_deadlift_light_rdl",
+          "name": "Romanian Deadlift - Light (RDL)",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Hold dumbbells, hinge at hips, lower weights along legs until hamstring stretch. Keep spine neutral. Start light -- form is critical. This exercise is new this month -- take your time learning it."
+        },
+        {
+          "id": "lat_pulldown",
+          "name": "Lat Pulldown",
+          "sets": 4,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Adding a 4th set and increasing weight from November. Drive elbows down and back. Full range of motion. Building a strong upper back helps counteract forward-rounding posture."
+        },
+        {
+          "id": "dumbbell_lateral_raise",
+          "name": "Dumbbell Lateral Raise",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Stand with dumbbells at sides. Raise arms out to sides to shoulder height -- lead with elbows, slight bend in elbow. Control the descent slowly. Use lighter weight than you think. Builds lateral deltoids and overall shoulder health."
+        },
+        {
+          "id": "single_leg_balance",
+          "name": "Single-Leg Balance",
+          "sets": 3,
+          "reps": "30 sec each leg",
+          "rest_sec": 45,
+          "weight_entry": false,
+          "notes": "Stand on one leg. Progress through: eyes open and stable, then eyes closed, then slight knee bend. Use a wall nearby for safety."
+        },
+        {
+          "id": "hip_abduction_machine",
+          "name": "Hip Abduction Machine",
+          "sets": 3,
+          "reps": "15",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Same as November but heavier. Push knees outward against resistance."
+        },
+        {
+          "id": "plank_with_side_plank",
+          "name": "Plank with Side Plank",
+          "sets": 3,
+          "reps": "20 sec plank + 15 sec each side",
+          "rest_sec": 60,
+          "weight_entry": false,
+          "notes": "Start in forearm plank (20 sec), rotate to side plank (15 sec), back to center, then other side (15 sec). One full sequence = one rep. Builds lateral core stability and obliques. If too long, break into separate sets."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Stair Climber",
+        "duration_min": 25,
+        "instruction": "Steady pace. RPE 5-6. Handrails for balance only."
+      },
+      "day": "Thursday"
+    }
+  ]
+}

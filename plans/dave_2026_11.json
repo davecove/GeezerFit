@@ -1,0 +1,161 @@
+{
+  "user": "dave",
+  "month_label": "November 2026",
+  "month_key": "2026-11",
+  "phase_label": "Foundation Phase",
+  "phase_note": "Focus on movement quality and baseline strength. This month is not about pushing limits -- establish form, learn the machines, and build the habit.",
+  "workouts": [
+    {
+      "id": "A",
+      "warmup": [
+        {
+          "name": "Treadmill or bike",
+          "instruction": "5 min at easy pace"
+        },
+        {
+          "name": "Cat-cow stretch",
+          "instruction": "10 reps, slow and controlled"
+        },
+        {
+          "name": "Hip circles",
+          "instruction": "10 each direction, hands on hips"
+        },
+        {
+          "name": "Glute bridges",
+          "instruction": "15 reps, hold 1 sec at top"
+        },
+        {
+          "name": "Side-lying clamshells",
+          "instruction": "12 each side, control the movement"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "goblet_squat",
+          "name": "Goblet Squat",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Hold a dumbbell vertically at your chest. Feet shoulder-width, toes slightly out. Sit back and down, keeping chest tall and knees tracking over toes. Builds legs and core without spinal compression. Start light -- form first."
+        },
+        {
+          "id": "seated_cable_row",
+          "name": "Seated Cable Row",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Use neutral grip (palms facing each other). Sit tall, slight lean back. Pull handle to lower chest, squeezing shoulder blades together. Keep spine neutral -- no rounding. Control the weight back slowly."
+        },
+        {
+          "id": "dumbbell_bench_press",
+          "name": "Dumbbell Bench Press",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Lie on flat bench. Dumbbells at chest level, elbows about 45 degrees from body. Press up and slightly together. Lower slowly and controlled. Easier on shoulders than barbell."
+        },
+        {
+          "id": "pallof_press",
+          "name": "Pallof Press",
+          "sets": 3,
+          "reps": "10 each side",
+          "rest_sec": 60,
+          "weight_entry": true,
+          "notes": "Cable handle at chest height. Stand sideways to the machine. Hold handle at chest, press straight out and hold 2 seconds, return. CORE EXERCISE -- resist rotating toward the cable. Keep hips and shoulders square."
+        },
+        {
+          "id": "hip_flexor_stretch",
+          "name": "Hip Flexor Stretch",
+          "sets": 2,
+          "reps": "30 sec each side",
+          "rest_sec": 30,
+          "weight_entry": false,
+          "notes": "Kneeling lunge position. Back knee on floor, front foot flat. Shift hips forward gently until you feel stretch in front of rear hip. Keep torso upright. Hold steady -- no bouncing."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Cardio Finisher",
+        "duration_min": 15,
+        "instruction": "Bike, elliptical, or treadmill. Moderate pace, RPE 5-6 out of 10."
+      },
+      "day": "Tuesday"
+    },
+    {
+      "id": "B",
+      "warmup": [
+        {
+          "name": "Treadmill or bike",
+          "instruction": "5 min at easy pace"
+        },
+        {
+          "name": "World's greatest stretch",
+          "instruction": "5 each side, slow and deliberate"
+        },
+        {
+          "name": "Leg swings",
+          "instruction": "10 forward/back, 10 side-to-side, each leg"
+        },
+        {
+          "name": "Band pull-aparts",
+          "instruction": "15 reps, light resistance band at shoulder height"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "romanian_deadlift_rdl",
+          "name": "Romanian Deadlift (RDL)",
+          "sets": 3,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Hold dumbbells in front of thighs. Push hips back (hinge, don't squat), lower weights along your legs until you feel a hamstring stretch -- typically mid-shin. Squeeze glutes to return. Keep spine neutral. Start conservative on weight."
+        },
+        {
+          "id": "lat_pulldown",
+          "name": "Lat Pulldown",
+          "sets": 3,
+          "reps": "12",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Wide overhand grip, slightly wider than shoulders. Lean back slightly (10-15 degrees), pull bar to upper chest. Drive elbows down and back. Squeeze lats at bottom. Control the return."
+        },
+        {
+          "id": "dumbbell_shoulder_press",
+          "name": "Dumbbell Shoulder Press",
+          "sets": 3,
+          "reps": "10",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Seated or standing, dumbbells at shoulder height, elbows at 90 degrees. Press straight up without locking out at top. Lower slowly. Keep core braced."
+        },
+        {
+          "id": "farmers_carry",
+          "name": "Farmer's Carry",
+          "sets": 3,
+          "reps": "30 meters",
+          "rest_sec": 90,
+          "weight_entry": true,
+          "notes": "Pick up two heavy dumbbells, stand tall, walk with controlled steps. Shoulders back and down, brace core, don't lean to either side. Turn around at 15 meters and return. Increase weight when this feels easy."
+        },
+        {
+          "id": "dead_bug",
+          "name": "Dead Bug",
+          "sets": 3,
+          "reps": "8 each side",
+          "rest_sec": 60,
+          "weight_entry": false,
+          "notes": "Lie on back, arms straight up, knees bent 90 degrees, shins parallel to floor. PRESS lower back into the floor throughout. Slowly lower one arm overhead and the opposite leg toward floor, then return. Alternate sides. Move slowly."
+        }
+      ],
+      "cardio_finisher": {
+        "label": "Cardio Finisher",
+        "duration_min": 15,
+        "instruction": "Bike, elliptical, or treadmill. Moderate pace, RPE 5-6 out of 10."
+      },
+      "day": "Thursday"
+    }
+  ]
+}
