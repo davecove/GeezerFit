@@ -6,6 +6,7 @@ import com.geezerfit.data.model.Manifest
 import com.geezerfit.data.model.ManifestEntry
 import com.geezerfit.data.model.Plan
 import com.geezerfit.data.repository.PlanRepository
+import com.geezerfit.data.repository.PlanStatus
 import com.geezerfit.data.repository.SyncResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -28,6 +29,9 @@ class RemotePlanRepository @Inject constructor(
     private val client: OkHttpClient,
     private val json: Json,
 ) : PlanRepository {
+
+    override fun observeStatus(): Flow<PlanStatus> =
+        dao.observeStatus().map { PlanStatus(it.count, it.lastCachedAt) }
 
     override fun observePlans(userId: Int): Flow<List<Plan>> =
         dao.observeForUser(userId).map { rows ->

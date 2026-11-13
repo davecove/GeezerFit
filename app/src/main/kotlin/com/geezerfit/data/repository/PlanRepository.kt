@@ -9,7 +9,12 @@ data class SyncResult(
     val error: String? = null,
 )
 
+data class PlanStatus(val count: Int, val lastUpdated: Long?)
+
 interface PlanRepository {
+    /** How many plans are cached and when the cache last changed. */
+    fun observeStatus(): Flow<PlanStatus>
+
     /** Cached plans for a user, newest month first. Emits immediately from cache. */
     fun observePlans(userId: Int): Flow<List<Plan>>
 

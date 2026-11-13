@@ -12,3 +12,6 @@ local.properties
 .idea/
 *.apk
 *.aab
+
+# Local assistant notes (contain machine paths / account details; repo is public)
+CLAUDE.md

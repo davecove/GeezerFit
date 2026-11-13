@@ -24,10 +24,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.geezerfit.viewmodel.HomeViewModel
+import java.text.DateFormat
+import java.util.Date
 
 @Composable
 fun HomeScreen(onUserSelected: (String) -> Unit, vm: HomeViewModel = hiltViewModel()) {
     val announcement by vm.announcement.collectAsState()
+    val status by vm.status.collectAsState()
+    val syncError by vm.syncError.collectAsState()
     val snackbar = remember { SnackbarHostState() }
 
     LaunchedEffect(announcement) {
@@ -46,6 +50,15 @@ fun HomeScreen(onUserSelected: (String) -> Unit, vm: HomeViewModel = hiltViewMod
             Text("GeezerFit", style = MaterialTheme.typography.displaySmall)
             UserButton("Dave", Color(0xFF1F4E79)) { onUserSelected("dave") }
             UserButton("Lesa", Color(0xFF375623)) { onUserSelected("lesa") }
+
+            val updated = status.lastUpdated?.let {
+                " · updated " + DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(Date(it))
+            } ?: ""
+            Text("Plans: ${status.count} loaded$updated", style = MaterialTheme.typography.bodyMedium)
+            syncError?.let {
+                Text("Couldn't check for new plans: $it", style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error)
+            }
         }
     }
 }

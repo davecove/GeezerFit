@@ -2,7 +2,6 @@ package com.geezerfit.data.db
 
 import androidx.room.Dao
 import androidx.room.Database
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -20,7 +19,12 @@ interface PlanCacheDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(entity: PlanCacheEntity)
+
+    @Query("SELECT COUNT(*) AS count, MAX(cachedAt) AS lastCachedAt FROM plan_cache")
+    fun observeStatus(): Flow<PlanStatusRow>
 }
+
+data class PlanStatusRow(val count: Int, val lastCachedAt: Long?)
 
 @Dao
 interface SessionDao {
@@ -60,7 +64,8 @@ interface DraftDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(draft: SessionDraftEntity)
 
-    @Delete suspend fun delete(draft: SessionDraftEntity)
+    @Query("DELETE FROM session_draft WHERE userId = :userId AND monthKey = :monthKey AND workoutId = :workoutId")
+    suspend fun clear(userId: Int, monthKey: String, workoutId: String)
 }
 
 @Database(
