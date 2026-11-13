@@ -75,7 +75,7 @@ fun SessionScreen(onBackToPlan: () -> Unit, onViewHistory: () -> Unit, vm: Sessi
                 Text("Session saved. Good work.", style = MaterialTheme.typography.headlineSmall)
                 Text(saved.date, style = MaterialTheme.typography.bodyLarge)
                 Text(saved.workoutLabel, style = MaterialTheme.typography.bodyLarge)
-                Text("${saved.completed} exercises completed", style = MaterialTheme.typography.bodyLarge)
+                Text("${saved.completed} ${if (saved.completed == 1) "exercise" else "exercises"} completed", style = MaterialTheme.typography.bodyLarge)
                 Button(onClick = onViewHistory, Modifier.fillMaxWidth().heightIn(min = 56.dp)) { Text("View History") }
                 OutlinedButton(onClick = onBackToPlan, Modifier.fillMaxWidth().heightIn(min = 56.dp)) { Text("Back to Plan") }
             }
