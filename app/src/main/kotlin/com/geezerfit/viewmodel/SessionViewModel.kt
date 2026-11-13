@@ -16,6 +16,10 @@ import com.geezerfit.data.model.Plan
 import com.geezerfit.data.model.Workout
 import com.geezerfit.data.repository.PlanRepository
 import com.geezerfit.data.repository.remote.USER_IDS
+import com.geezerfit.data.settings.SettingsRepository
+import com.geezerfit.util.displayToLbs
+import com.geezerfit.util.formatNumber
+import com.geezerfit.util.lbsToDisplay
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Job
@@ -53,6 +57,7 @@ data class SessionUiState(
     val cardioDone: Boolean = false,
     val timer: TimerState? = null,
     val saved: SavedSummary? = null,
+    val metric: Boolean = false,
 )
 
 @HiltViewModel
@@ -62,6 +67,7 @@ class SessionViewModel @Inject constructor(
     private val sessionDao: SessionDao,
     private val draftDao: DraftDao,
     private val json: Json,
+    private val settings: SettingsRepository,
     @ApplicationContext private val context: Context,
 ) : ViewModel() {
 
@@ -87,12 +93,12 @@ class SessionViewModel @Inject constructor(
                 ?.let { runCatching { json.decodeFromString<DraftState>(it.stateJson) }.getOrNull() }
             val weights = workout.exercises.filter { it.weightEntry }.associate { ex ->
                 ex.id to (draft?.weights?.get(ex.id)
-                    ?: sessionDao.lastWeight(userId, ex.id)?.let(::formatWeight)
+                    ?: sessionDao.lastWeight(userId, ex.id)?.let { formatNumber(lbsToDisplay(it, settings.metric.value)) }
                     ?: "")
             }
             _state.update {
                 it.copy(
-                    loading = false, plan = plan, workout = workout, weights = weights,
+                    loading = false, plan = plan, workout = workout, weights = weights, metric = settings.metric.value,
                     checked = draft?.checked ?: emptySet(),
                     warmupChecked = draft?.warmup ?: emptySet(),
                     cardioDone = draft?.cardio ?: false,
@@ -181,7 +187,7 @@ class SessionViewModel @Inject constructor(
                 done.map {
                     ExerciseLogEntity(
                         sessionId = 0, exerciseId = it.id, exerciseName = it.name, setsCompleted = it.sets,
-                        weightLbs = if (it.weightEntry) s.weights[it.id]?.toFloatOrNull() else null,
+                        weightLbs = if (it.weightEntry) s.weights[it.id]?.toFloatOrNull()?.let { w -> displayToLbs(w, s.metric) } else null,
                     )
                 },
             )
@@ -191,6 +197,4 @@ class SessionViewModel @Inject constructor(
             }
         }
     }
-
-    private fun formatWeight(f: Float): String = if (f % 1f == 0f) f.toInt().toString() else f.toString()
 }

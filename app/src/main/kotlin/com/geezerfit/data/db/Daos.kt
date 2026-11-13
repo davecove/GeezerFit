@@ -54,6 +54,32 @@ interface SessionDao {
 
     @Query("SELECT weightLbs FROM last_weight WHERE userId = :userId AND exerciseId = :exerciseId")
     suspend fun lastWeight(userId: Int, exerciseId: String): Float?
+
+    @Query("UPDATE exercise_log SET weightLbs = :weight WHERE id = :id")
+    suspend fun setLogWeight(id: Long, weight: Float?)
+
+    @Query("DELETE FROM exercise_log WHERE id = :id")
+    suspend fun deleteLog(id: Long)
+
+    @Query("SELECT l.weightLbs FROM exercise_log l JOIN session s ON s.id = l.sessionId WHERE s.userId = :userId AND l.exerciseId = :exerciseId AND l.weightLbs IS NOT NULL ORDER BY s.completedAt DESC LIMIT 1")
+    suspend fun latestLoggedWeight(userId: Int, exerciseId: String): Float?
+
+    @Query("DELETE FROM last_weight WHERE userId = :userId AND exerciseId = :exerciseId")
+    suspend fun clearLastWeight(userId: Int, exerciseId: String)
+
+    /** Recompute the pre-fill weight after an edit/delete so it matches the newest remaining log. */
+    @Transaction
+    suspend fun refreshLastWeight(userId: Int, exerciseId: String) {
+        val w = latestLoggedWeight(userId, exerciseId)
+        if (w == null) clearLastWeight(userId, exerciseId)
+        else upsertLastWeights(listOf(LastWeightEntity(userId, exerciseId, w)))
+    }
+
+    @Query("SELECT * FROM session ORDER BY completedAt ASC")
+    suspend fun allSessions(): List<SessionEntity>
+
+    @Query("SELECT * FROM exercise_log")
+    suspend fun allLogs(): List<ExerciseLogEntity>
 }
 
 @Dao

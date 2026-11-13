@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.horizontalScroll
@@ -13,6 +14,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +27,7 @@ import com.geezerfit.viewmodel.PlanViewModel
 import java.time.YearMonth
 
 @Composable
-fun PlanScreen(onStartWorkout: (month: String, workout: String) -> Unit, vm: PlanViewModel = hiltViewModel()) {
+fun PlanScreen(onStartWorkout: (month: String, workout: String) -> Unit, onHistory: () -> Unit, vm: PlanViewModel = hiltViewModel()) {
     val plans by vm.plans.collectAsState()
     val selectedKey by vm.selected.collectAsState()
 
@@ -35,6 +37,8 @@ fun PlanScreen(onStartWorkout: (month: String, workout: String) -> Unit, vm: Pla
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text(vm.user.replaceFirstChar(Char::uppercase), style = MaterialTheme.typography.headlineMedium)
+
+            OutlinedButton(onClick = onHistory, Modifier.fillMaxWidth().heightIn(min = 56.dp)) { Text("History") }
 
             val list = plans
             when {

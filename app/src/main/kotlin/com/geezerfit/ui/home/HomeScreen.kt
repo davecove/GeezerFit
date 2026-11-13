@@ -13,6 +13,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -28,7 +29,7 @@ import java.text.DateFormat
 import java.util.Date
 
 @Composable
-fun HomeScreen(onUserSelected: (String) -> Unit, vm: HomeViewModel = hiltViewModel()) {
+fun HomeScreen(onUserSelected: (String) -> Unit, onSettings: () -> Unit, vm: HomeViewModel = hiltViewModel()) {
     val announcement by vm.announcement.collectAsState()
     val status by vm.status.collectAsState()
     val syncError by vm.syncError.collectAsState()
@@ -54,6 +55,7 @@ fun HomeScreen(onUserSelected: (String) -> Unit, vm: HomeViewModel = hiltViewMod
             val updated = status.lastUpdated?.let {
                 " · updated " + DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(Date(it))
             } ?: ""
+            TextButton(onClick = onSettings) { Text("Settings", style = MaterialTheme.typography.titleMedium) }
             Text("Plans: ${status.count} loaded$updated", style = MaterialTheme.typography.bodyMedium)
             syncError?.let {
                 Text("Couldn't check for new plans: $it", style = MaterialTheme.typography.bodySmall,

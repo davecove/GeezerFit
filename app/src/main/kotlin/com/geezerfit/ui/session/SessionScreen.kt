@@ -20,6 +20,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -42,10 +43,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.geezerfit.data.model.Exercise
+import com.geezerfit.util.localizeDistance
+import com.geezerfit.util.unitLabel
 import com.geezerfit.viewmodel.SessionViewModel
 
 @Composable
-fun SessionScreen(onBackToPlan: () -> Unit, vm: SessionViewModel = hiltViewModel()) {
+fun SessionScreen(onBackToPlan: () -> Unit, onViewHistory: () -> Unit, vm: SessionViewModel = hiltViewModel()) {
     val s by vm.state.collectAsState()
     var confirming by remember { mutableStateOf(false) }
     val focus = LocalFocusManager.current
@@ -73,7 +76,8 @@ fun SessionScreen(onBackToPlan: () -> Unit, vm: SessionViewModel = hiltViewModel
                 Text(saved.date, style = MaterialTheme.typography.bodyLarge)
                 Text(saved.workoutLabel, style = MaterialTheme.typography.bodyLarge)
                 Text("${saved.completed} exercises completed", style = MaterialTheme.typography.bodyLarge)
-                Button(onClick = onBackToPlan, Modifier.fillMaxWidth().heightIn(min = 56.dp)) { Text("Back to Plan") }
+                Button(onClick = onViewHistory, Modifier.fillMaxWidth().heightIn(min = 56.dp)) { Text("View History") }
+                OutlinedButton(onClick = onBackToPlan, Modifier.fillMaxWidth().heightIn(min = 56.dp)) { Text("Back to Plan") }
             }
             return
         }
@@ -152,6 +156,7 @@ fun SessionScreen(onBackToPlan: () -> Unit, vm: SessionViewModel = hiltViewModel
             items(workout.exercises, key = { it.id }) { ex ->
                 ExerciseCard(
                     ex = ex,
+                    metric = s.metric,
                     checked = ex.id in s.checked,
                     weight = s.weights[ex.id] ?: "",
                     onToggle = { vm.toggleExercise(ex) },
@@ -193,6 +198,7 @@ fun SessionScreen(onBackToPlan: () -> Unit, vm: SessionViewModel = hiltViewModel
 @Composable
 private fun ExerciseCard(
     ex: Exercise,
+    metric: Boolean,
     checked: Boolean,
     weight: String,
     onToggle: () -> Unit,
@@ -207,7 +213,7 @@ private fun ExerciseCard(
                 Column(Modifier.weight(1f)) {
                     Text(ex.name, fontSize = 18.sp, style = MaterialTheme.typography.titleMedium)
                     Text(
-                        "${ex.sets} × ${ex.reps}" + if (ex.restSec > 0) "   Rest: ${ex.restSec}s" else "",
+                        "${ex.sets} × ${localizeDistance(ex.reps, metric)}" + if (ex.restSec > 0) "   Rest: ${ex.restSec}s" else "",
                         style = MaterialTheme.typography.bodyLarge,
                     )
                 }
@@ -223,7 +229,7 @@ private fun ExerciseCard(
                         keyboardActions = KeyboardActions(onDone = { onDone() }),
                         modifier = Modifier.width(160.dp),
                     )
-                    Text("  lbs", style = MaterialTheme.typography.bodyLarge)
+                    Text("  ${unitLabel(metric)}", style = MaterialTheme.typography.bodyLarge)
                 }
             }
             if (ex.notes.isNotBlank()) {
@@ -232,7 +238,7 @@ private fun ExerciseCard(
                     Modifier.fillMaxWidth().clickable { notesOpen = !notesOpen }.padding(vertical = 8.dp),
                     style = MaterialTheme.typography.labelLarge,
                 )
-                if (notesOpen) Text(ex.notes, style = MaterialTheme.typography.bodyMedium)
+                if (notesOpen) Text(localizeDistance(ex.notes, metric), style = MaterialTheme.typography.bodyMedium)
             }
         }
     }

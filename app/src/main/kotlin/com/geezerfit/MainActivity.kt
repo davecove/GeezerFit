@@ -9,9 +9,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.geezerfit.ui.history.HistoryScreen
 import com.geezerfit.ui.home.HomeScreen
 import com.geezerfit.ui.plan.PlanScreen
 import com.geezerfit.ui.session.SessionScreen
+import com.geezerfit.ui.settings.SettingsScreen
 import com.geezerfit.ui.theme.GeezerFitTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,14 +31,22 @@ private fun GeezerFitRoot() {
     val str = NavType.StringType
     NavHost(nav, startDestination = "home") {
         composable("home") {
-            GeezerFitTheme { HomeScreen(onUserSelected = { nav.navigate("plan/$it") }) }
+            GeezerFitTheme { HomeScreen(onUserSelected = { nav.navigate("plan/$it") }, onSettings = { nav.navigate("settings") }) }
         }
         composable("plan/{user}", arguments = listOf(navArgument("user") { type = str })) { entry ->
             val user = entry.arguments?.getString("user") ?: "dave"
             GeezerFitTheme(user) {
-                PlanScreen(onStartWorkout = { month, workout -> nav.navigate("session/$user/$month/$workout") })
+                PlanScreen(
+                    onStartWorkout = { month, workout -> nav.navigate("session/$user/$month/$workout") },
+                    onHistory = { nav.navigate("history/$user") },
+                )
             }
         }
+        composable("history/{user}", arguments = listOf(navArgument("user") { type = str })) { entry ->
+            val user = entry.arguments?.getString("user") ?: "dave"
+            GeezerFitTheme(user) { HistoryScreen() }
+        }
+        composable("settings") { GeezerFitTheme { SettingsScreen() } }
         composable(
             "session/{user}/{month}/{workout}",
             arguments = listOf(
@@ -46,7 +56,12 @@ private fun GeezerFitRoot() {
             ),
         ) { entry ->
             val user = entry.arguments?.getString("user") ?: "dave"
-            GeezerFitTheme(user) { SessionScreen(onBackToPlan = { nav.popBackStack() }) }
+            GeezerFitTheme(user) {
+                SessionScreen(
+                    onBackToPlan = { nav.popBackStack() },
+                    onViewHistory = { nav.navigate("history/$user") { popUpTo("plan/$user") } },
+                )
+            }
         }
     }
 }
